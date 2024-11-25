@@ -1,0 +1,97 @@
+/* Configuração Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Darker Grotesque', sans-serif;
+    background-color: #3A3A3A; /* Fundo cinza escuro */
+    color: #ffffff; /* Texto branco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Main Content */
+.main-content {
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Logo */
+.logo img {
+    height: 100px;
+    width: auto;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Navegação */
+nav {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #01FF70; /* Cor do texto */
+    text-decoration: none;
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav a:hover {
+    background-color: #01FF70; /* Fundo ao passar o mouse */
+    color: #3A3A3A; /* Texto escuro */
+    transform: scale(1.1); /* Aumenta levemente */
+}
+
+/* Animação de FadeIn */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 0.8em;
+    animation: slideUp 1s ease-in-out;
+}
+
+/* Animação de SlideUp no footer */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

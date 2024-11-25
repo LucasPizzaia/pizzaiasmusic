@@ -1,0 +1,186 @@
+/* Configuração Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Darker Grotesque', sans-serif;
+    background-color: #000000; /* Fundo preto */
+    color: #ffffff; /* Texto branco */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: space-between;
+    padding-bottom: 100px;
+}
+
+/* Container principal */
+.edit-artista-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Estilo para os containers internos */
+.artista-dados, .artista-foto {
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da imagem */
+.artista-foto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+
+/* Título de cada container */
+.artista-dados h2, .artista-foto h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Estilo do formulário */
+.artista-dados form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Grupos de formulário */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+/* Estiliza o input de arquivo */
+#foto {
+    padding: 10px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#foto:focus {
+    outline: none;
+    border-color: #28a745;
+}
+
+/* Botão de envio no formulário */
+.submit-button {
+    padding: 12px 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}
+
+.artista-foto input[type="file"] {
+    margin-top: 10px;
+    font-family: 'Darker Grotesque', sans-serif;
+}
+
+.confirm-edit-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 10px auto;
+}
+
+.confirm-edit-button:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1c1c1c;
+    padding: 15px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-container .logo-footer img {
+    height: 50px;
+    width: auto;
+}
+
+footer nav {
+    display: flex;
+    gap: 15px;
+}
+
+footer nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+footer nav a:hover {
+    background-color: #28a745; /* Cor verde */
+    transform: scale(1.1);
+}

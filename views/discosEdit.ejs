@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar <%= disco.titulo %></title>
+    <link rel="stylesheet" href="/css/discosEdit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/logo-favico.png" type="image/x-icon">
+</head>
+<body>
+    <div class="edit-disco-container">
+        <div class="disco-dados fade-in">
+            <h2>Editando: <%= disco.titulo %></h2>
+            <form id="disco-dados-form" method="POST" action="/discos/<%= disco.id %>/edit/dados">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <label for="titulo">Nome do Disco:</label>
+                    <input type="text" id="titulo" name="titulo" value="<%= disco.titulo %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="ano_lancamento">Ano de Lançamento:</label>
+                    <input type="number" id="ano_lancamento" name="ano_lancamento" value="<%= disco.ano_lancamento %>" required>
+                </div>
+                <button type="submit" class="submit-button">Salvar Alterações</button>
+            </form>
+        </div>
+        
+        <div class="disco-foto fade-in">
+            <h2>Foto</h2>
+            <img src="/<%= disco.capa %>" alt="Capa do Disco" width="200">
+            <form action="/discos/<%= disco.id %>/edit/capa" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="PUT">
+                <label for="capa">Escolher nova foto:</label>
+                <input type="file" id="capa" name="capa" accept="image/*" required>
+                <button type="submit" class="confirm-edit-button">Substituir Foto</button>
+            </form>
+        </div>
+
+        <div class="disco-faixas fade-in">
+            <h2>Faixas</h2>
+            <ul class="faixa-list">
+                <% faixas.forEach((faixa) => { %>
+                <% if (faixa.discoId === disco.id) { %>
+                <li class="faixa-item">
+                    <span class="faixa-titulo"><%= faixa.titulo %></span>
+                    <div class="faixa-options">
+                        <button class="edit-faixa" onclick="window.location.href='/faixas/<%= faixa.id %>/edit'">
+                            <i class="fas fa-edit"></i> Editar
+                        </button>
+                        <form action="/faixas/<%= faixa.id %>" method="POST" onsubmit="return confirm('Você tem certeza que deseja excluir esta faixa?');">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="delete-faixa">
+                                <i class="fas fa-trash"></i> Excluir
+                            </button>
+                        </form>
+                    </div>
+                </li>
+                <% } %>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="logo-footer">
+                <a href="/"><img src="/images/logo.png" alt="Pizzaia Logo"></a>
+            </div>
+            <nav>
+                <a href="/artistas"><i class="fa-solid fa-user"></i> Artistas</a>
+                <a href="/discos"><i class="fas fa-record-vinyl"></i> Discos</a>
+                <a href="/faixas"><i class="fas fa-music"></i> Faixas</a>
+                <a href="/generos"><i class="fas fa-tags"></i> Gêneros</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

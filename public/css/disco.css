@@ -1,0 +1,156 @@
+/* Configuração Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Darker Grotesque', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: space-between;
+    padding-bottom: 100px;
+}
+
+/* Disco */
+.disco-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border: 2px solid #01FF70;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 800px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center; 
+}
+
+.disco-container .foto img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10%;
+    object-fit: cover;
+    border: 3px solid #01FF70;
+    margin-bottom: 20px;
+}
+
+.disco-container .dados {
+    flex: 1;
+    text-align: left;
+    width: 100%; 
+}
+
+.disco-container .dados h2 {
+    font-family: 'Darker Grotesque', sans-serif;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #01FF70;
+}
+
+.disco-container .dados p {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.disco-container h3 {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 1.5rem;
+    color: #01FF70;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.faixas-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.faixa {
+    background-color: #333333;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.faixa:hover {
+    background-color: #FF4057;
+    color: white;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #FF4057;
+    transform: scale(1.1);
+}
+
+/* Rodapé */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1c1c1c;
+    padding: 15px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-container .logo-footer img {
+    height: 50px;
+    width: auto;
+}
+
+footer nav {
+    display: flex;
+    gap: 15px;
+}
+
+footer nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+footer nav a:hover {
+    background-color: #06dc63;
+    transform: scale(1.1);
+}

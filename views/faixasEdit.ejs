@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar <%= faixa.nome %></title>
+    <link rel="stylesheet" href="/css/faixasEdit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/logo-favico.png" type="image/x-icon">
+</head>
+<body>
+
+    <div class="edit-track-container">
+        <h2>Editando <%= faixa.titulo %></h2>
+        <form action="/faixas/<%= faixa.id %>/edit" method="POST" class="edit-track-form">
+            <input type="hidden" name="_method" value="PUT">
+            <label for="titulo">Novo título:</label>
+            <input type="text" id="titulo" name="titulo" value="<%= faixa.titulo %>" required>
+        
+            <button type="submit" class="confirm-edit-button">Confirmar</button>
+            <a href="/faixas" class="cancel-edit-button">Cancelar</a>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="logo-footer">
+                <a href="/"><img src="/images/logo.png" alt="Pizzaia Logo"></a>
+            </div>
+            <nav>
+                <a href="/artistas"><i class="fa-solid fa-user"></i> Artistas</a>
+                <a href="/discos"><i class="fas fa-record-vinyl"></i> Discos</a>
+                <a href="/faixas"><i class="fas fa-music"></i> Faixas</a>
+                <a href="/generos"><i class="fas fa-tags"></i> Gêneros</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

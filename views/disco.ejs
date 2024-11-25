@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= disco.titulo %></title>
+    <link rel="stylesheet" href="/css/disco.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/logo-favico.png" type="image/x-icon">
+</head>
+<body>
+    <div class="disco-container">
+        <div class="foto">
+            <img src="/<%= disco.capa %>" alt="Capa de <%= disco.titulo %>">
+        </div>
+    
+        <div class="dados">
+            <h2><%= disco.titulo %></h2>
+            <p><strong>Ano de Lançamento:</strong> <%= disco.ano_lancamento %></p>
+            <h3>Faixas:</h3>
+            <div class="faixas-container">
+                <% disco.faixas.forEach(faixa => { %>
+                    <div class="faixa"><%= faixa.titulo %></div>
+                <% }); %>
+            </div>
+        </div>
+    </div>    
+
+    <footer>
+        <div class="footer-container">
+            <div class="logo-footer">
+                <a href="/"><img src="/images/logo.png" alt="Logo"></a>
+            </div>
+            <nav>
+                <a href="/artistas"><i class="fa-solid fa-user"></i> Artistas</a>
+                <a href="/discos"><i class="fas fa-record-vinyl"></i> Discos</a>
+                <a href="/faixas"><i class="fas fa-music"></i> Faixas</a>
+                <a href="/generos"><i class="fas fa-tags"></i> Gêneros</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
